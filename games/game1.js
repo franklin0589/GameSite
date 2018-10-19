@@ -59,8 +59,7 @@ let player={
 }
 function setup() {
  var game=createCanvas(400, 400);
- let body=document.body;
-    game.parent(body);
+    game.parent('gamebox');
 }
 let score=0;
 let p1x=0;

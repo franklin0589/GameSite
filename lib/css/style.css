@@ -1,0 +1,13 @@
+body{
+    font-family: 'Bungee', cursive;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(44, 107, 44, 0.747);
+
+}
+h1{
+    font-family: 'Bungee Shade', cursive;
+    color:black;
+    
+}
