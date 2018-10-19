@@ -13,23 +13,15 @@
 </head>
 <body>
     <h1>Manarobe Games</h1>
-<form action="index.php" method="get">
-        <select name="number">
-            <option value="1">Dodge attack</option>
-            <option value="2">Running man</option>
-            <option value="3">Hold the button</option>
-            <option value="4">Pong</option>   
-            <option value="5">Endless Jump</option> 
-            <option value="6">Tic Tac Toe</option>   
-        </select>
-
-<input type="submit">
-</form>
-    
-    <div id="gamebox"></div>
-    <?php if($_SERVER['REQUEST_METHOD'] == 'GET'){?>
-    <script src="games/game<?php echo $_GET['number']?>.js"></script>
-    <?php } ?>
+    <div id="nav">
+    <a href="games/1/1.html">Dodge!</a>
+    <a href="games/2/2.html">Run</a>
+    <a href="games/3/3.html">Hold the Button</a>
+    <a href="games/4/4.html">Pong</a>
+    <a href="games/5/5.html">Endless Jumper</a>
+    <a href="games/6/6.html">Tic tac toe</a>
+    </div>
     <p>First design of the Manarobe games website. More games to come in the future. Better design to come in the future. Games are buggy at the moment. If you have complaints, keep them to yourself.</p>
+
 </body>
 </html>
