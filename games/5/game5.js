@@ -1,3 +1,4 @@
+
 function obstaclespawner(){
     this.obstacles=[];
     this.spawndelay=0;
@@ -91,7 +92,7 @@ function jumper(){
         }
     }
 }
-function stripes(i){
+function stripes5(i){
     this.x = 200*i;
     this.y = 425;
     this.draw=function(){
@@ -108,72 +109,74 @@ function stripes(i){
 var startbutton;
 var restartbutton;
 function setup(){
-    let canvas = createCanvas(1000,600);
-    canvas.parent("gamebox");
-    startbutton = createButton('Start');
-   
+    let c5 = createCanvas(1000,600);
+    c5.parent("gamebox");
+    textAlign(CENTER);
+    
     
 }
-const player= new jumper();
-const cloud= [];
-const stripe=[];
-const spawner= new obstaclespawner();
-let score=0;
-let game =[true,false,false,false,false];
+let player5= new jumper();
+let cloud= [];
+let stripe=[];
+let spawner= new obstaclespawner();
+let score5=0;
+let game5 =[true,false,false,false,false];
 for(i=0;i<5;i++){
-    const speed=Math.floor(Math.random()*4)+1;
-    const height=Math.floor(Math.random()*4)+1;
-    const fluff=Math.floor(Math.random()*4)+1;
+    let speed=Math.floor(Math.random()*4)+1;
+    let height=Math.floor(Math.random()*4)+1;
+    let fluff=Math.floor(Math.random()*4)+1;
     cloud.push(new clouds(speed,height,fluff));
 }
 for(i=0;i<6;i++){
-    stripe.push(new stripes(i));
+    stripe.push(new stripes5(i));
 }
 function draw(){
     noStroke();
-    if(game[0]===true){
+    if(game5[0]===true){
         startScreen();
     }
-    if(game[2]===true){
+    if(game5[2]===true){
         loseScreen();
     }
-    if(game[1]===true){
-        inGame();
+    if(game5[1]===true){
+        ingame5();
     }
 }
 
 function startScreen(){
         background('lightgreen')
         textSize(36);
-        text("Hopper",450,275);
-        startbutton.position(650, 650);
-       startbutton.size(50,50);
-        startbutton.mouseReleased(function(){
-            game[0]=false;
-            game[1]=true;
-            startbutton.remove();
-        });
+
+        text("Hopper",500,275);
+        textSize(24);
+        text("Press to Start",500,350);
+        
 }
-function loseScreen(){
-    background('lightgreen')
-    textSize(36);
-    text("Your Score is "+Math.floor(score),375,275);
-    const restartbutton= createButton("restart");
-    restartbutton.position(650, 650);
-    restartbutton.size(80,50);
-    restartbutton.mouseReleased(function(){
+function mouseReleased(){
+    if(game5[0]===true){
+    game5[0]=false;
+    game5[1]=true;
+    }
+    if(game5[2]){
         spawner.difficulty=1;
         spawner.obstacles=[];
         spawner.spawndelay=0;
-        score=0;
-        game[2]=false;
-        game[1]=true;
-        removeElements();
-        loop();
-    });
+        score5=0;
+        game5[2]=false;
+        game5[1]=true;
+        loop();  
+    }
+}
+function loseScreen(){
+    background(255,220,220)
+    textSize(36);
+    fill(255,0,0);
+    strokeWeight(8);
+    text("Your Score is "+Math.floor(score5),500,275);
+    text(`Click to restart`,500,350);
     noLoop();
 }
-function inGame(){
+function ingame5(){
     background("blue");
     //ground
     fill('green')
@@ -189,17 +192,22 @@ function inGame(){
         stripe[i].move();
         stripe[i].draw();
     }
-    player.show();
-    player.jump();
-    player.gravity();
+    player5.show();
+    player5.jump();
+    player5.gravity();
     spawner.spawn();
     spawner.destroy();
-    score+=0.01;
-    text(`${Math.floor(score)}`,825,75);
+    score5+=0.01;
+    stroke(6);
+    fill(255);
+    strokeWeight(8);
+    textSize(40);
+    text(`${Math.floor(score5)}`,825,75);
+    
     for(i=0;i<spawner.obstacles.length;i++){
-    if(spawner.obstacles[i].x>player.x-70&&spawner.obstacles[i].x<player.x&&spawner.obstacles[i].y-spawner.obstacles[i].dist<player.y+70){
-        game[1]=false;
-        game[2]=true;
+    if(spawner.obstacles[i].x>player5.x-70&&spawner.obstacles[i].x<player5.x&&spawner.obstacles[i].y-spawner.obstacles[i].dist<player5.y+70){
+        game5[1]=false;
+        game5[2]=true;
     }
 }
     

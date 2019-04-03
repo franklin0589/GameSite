@@ -1,6 +1,7 @@
+
 function setup(){
-    let canvas =createCanvas(500,500);
-    canvas.parent("gamebox");
+    let c6 =createCanvas(500,500);
+    c6.parent("gamebox");
 }
 let playerturn=[false,true];
 let rows=['','',''];

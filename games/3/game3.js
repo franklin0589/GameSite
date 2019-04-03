@@ -1,9 +1,10 @@
+
 function setup() {
-    let canvas =createCanvas(400, 400);
-    canvas.parent('gamebox');
+    let c3 =createCanvas(400, 400);
+   c3.parent("gamebox")
   }
   let counter=false;
-  let score =0;
+  let g3score =0;
   let scoreArray=[];
   function draw() {
     background(220);
@@ -14,7 +15,7 @@ function setup() {
       ellipse(200,200,200);
       fill(0);
       textSize(20);
-      text(Math.floor(score),40,40);
+      text(Math.floor(g3score),40,40);
       
       for(i=0;i<scoreArray.length;i++){
           text(scoreArray[i], 40,20*i+90);
@@ -36,10 +37,10 @@ function setup() {
   function mouseReleased(){
       if(dist(mouseX,mouseY,200,200)<100){
       counter=false;
-      scoreArray.push(Math.floor(score));
-      score=0;
+      scoreArray.push(Math.floor(g3score));
+      g3score=0;
       }else{
       counter=false;
-      score=0;
+      g3score=0;
       }
   }
