@@ -1,28 +1,70 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>VideoGames</title>
+    <title>Manarobe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
      <link rel="stylesheet" type="text/css" media="screen" href="lib/css/style.css" />
+     <link rel="shortcut icon" href="lib/img/mfavicon_x9Z_icon.ico" />
      <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade" rel="stylesheet">
-    <script src="lib/js/p5.min.js"></script>
-    <script src="lib/js/p5.dom.min.js"></script>
+    <script src="p5.min.js"></script>
+    <script src="p5.dom.min.js"></script>
+    
+    
 </head>
 <body>
     <h1>Manarobe Games</h1>
     <div id="nav">
-    <a href="games/1/1.html">Dodge</a>
-    <a href="games/2/2.html">Run</a>
-    <a href="games/3/3.html">Hold the Button</a>
-    <a href="games/4/4.html">Pong</a>
-    <a href="games/5/5.html">Endless Jumper</a>
-    <a href="games/6/6.html">Tic tac toe</a>
+            <button onclick="script(1);">Dodge</button>
+            <button onclick="script(2);">Race</button>
+            <button onclick="script(3);">Hold the Button</button>
+            <button onclick="script(4);">PaddleHit</button>
+            <button onclick="script(5);">Keep Up</button>
+            <button onclick="script(6);">Bucket Catch</button>
     </div>
-    <p>First design of the Manarobe games website. More games to come in the future. Better design to come in the future. Games are buggy at the moment. If you have complaints, keep them to yourself.</p>
-    <div id="gamebox"></div>
-   
+    <div id="gamebox">
+        <p class="p5Canvas" style="text-indent:40px;">    First design of the Manarobe games website. More games to come in the future. Better design to come in the future. Games are buggy at the moment. Refresh to fix most bugs. If you have complaints, please keep them to yourself.</p>
+    </div>
+    
+    
+    <script>
+        let canvases= document.body.getElementsByClassName("p5Canvas");
+        function script (n){
+            if(canvases.length>0){
+                document.getElementById("gamebox").removeChild(canvases[0]);
+                
+            }
+            switch(n){
+            case 1:
+                var p5js=new p5(c1,'c1');
+                break;
+            case 2:
+                var p5js=new p5(c2,'c2');
+                break;
+            case 3:
+                var p5js=new p5(c3,'c3');
+                break;
+            case 4:
+                var p5js=new p5(c4,'c4');
+                break;
+            case 5:
+                var p5js=new p5(c5,'c5');
+                break;
+            case 6:
+                var p5js=new p5(c6,'c6');
+                break;
+            default:
+
+            }
+        }
+        
+        </script>
+    <script src="games/game1.js"></script>
+    <script src="games/game2.js"></script>
+    <script src="games/game3.js"></script>
+    <script src="games/game4.js"></script>
+    <script src="games/game5.js"></script>
+    <script src="games/game6.js"></script>
 </body>
 </html>
