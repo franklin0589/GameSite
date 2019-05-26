@@ -3,68 +3,172 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Manarobe</title>
+    <title>TBN</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" type="text/css" media="screen" href="lib/css/style.css" />
-     <link rel="shortcut icon" href="lib/img/mfavicon_x9Z_icon.ico" />
-     <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade" rel="stylesheet">
-    <script src="p5.min.js"></script>
-    <script src="p5.dom.min.js"></script>
-    
-    
+    <link rel="stylesheet" type="text/css" media="screen" href="lib/css/style.css" />
+    <link rel="stylesheet" href="fontawesome-free-5.3.1-web\css\all.css" />
+    <link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#config-web-app -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>  
+    var firebaseConfig = {
+            apiKey: "AIzaSyAzHOI8EPFwBIQAOwcIH9aNHetjoYcgoa8",
+            authDomain: "gamesite-d6283.firebaseapp.com",
+            databaseURL: "https://gamesite-d6283.firebaseio.com",
+            projectId: "gamesite-d6283",
+            storageBucket: "gamesite-d6283.appspot.com",
+            messagingSenderId: "385465653151",
+            appId: "1:385465653151:web:cf0876fb2b7a7bad"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);</script>
+    <script src="lib/js/p5.min.js"></script>
+    <script src="lib/js/p5.dom.min.js"></script>
+    <script src="lib/js/main.js"></script> 
 </head>
 <body>
-    <h1>Manarobe Games</h1>
-    <div id="nav">
-            <button onclick="script(1);">Dodge</button>
-            <button onclick="script(2);">Race</button>
-            <button onclick="script(3);">Hold the Button</button>
-            <button onclick="script(4);">PaddleHit</button>
-            <button onclick="script(5);">Keep Up</button>
-            <button onclick="script(6);">Bucket Catch</button>
+    <div id="login_page">
+        <form id="main_form">
+            <h1 id="login_title">Login</h1>
+            <div>
+            <label for="username" id="username_label">Username :</label>
+            <input type="text" id="username">
+            </div>
+            <div>
+            <label for="password" id="password_label">Password :</label>
+            <input type="password" id="password">
+            </div>
+            <button id="login_button">Login</button>
+            <button id="create_account_button">Create Account</button>
+        </form>
     </div>
-    <div id="gamebox">
-        <p class="p5Canvas" style="text-indent:40px;">    First design of the Manarobe games website. More games to come in the future. Better design to come in the future. Games are buggy at the moment. Refresh to fix most bugs. If you have complaints, please keep them to yourself.</p>
-    </div>
-    
-    
-    <script>
-        let canvases= document.body.getElementsByClassName("p5Canvas");
-        function script (n){
-            if(canvases.length>0){
-                document.getElementById("gamebox").removeChild(canvases[0]);
-                
-            }
-            switch(n){
-            case 1:
-                var p5js=new p5(c1,'c1');
-                break;
-            case 2:
-                var p5js=new p5(c2,'c2');
-                break;
-            case 3:
-                var p5js=new p5(c3,'c3');
-                break;
-            case 4:
-                var p5js=new p5(c4,'c4');
-                break;
-            case 5:
-                var p5js=new p5(c5,'c5');
-                break;
-            case 6:
-                var p5js=new p5(c6,'c6');
-                break;
-            default:
-
-            }
-        }
+    <div id="main_page">
+    <nav>
+        <h1>Manarobe Games</h1>
+        <button id="friends_link">Messages</button>
+        <button id="games_link">Games</button>
+        <a href="index.html">Sign Out</a>
+        <!-- <div id="searchbar">
+        <i class="fas fa-search"></i>
+        <input placeholder="Search...">
+        </div> -->
+    </nav>
+    <div id="container">
         
-        </script>
-    <script src="games/game1.js"></script>
-    <script src="games/game2.js"></script>
-    <script src="games/game3.js"></script>
-    <script src="games/game4.js"></script>
-    <script src="games/game5.js"></script>
-    <script src="games/game6.js"></script>
+        <!-- <div id="sidebar">
+            <ul id="friends">
+                <span>Friends</span>
+                <li><a href="#">Friend1</a></li>
+                <li><a href="#">Friend2</a></li>
+                <li><a href="#">Friend3</a></li>
+                <li><a href="#">Friend4</a></li>
+                <li><a href="#">Friend5</a></li>
+            </ul>
+            <ul id="groups">
+                    <span>Groups</span>
+                    <li><a href="#">Class1</a></li>
+                    <li><a href="#">Class2</a></li>
+                    <li><a href="#">Class3</a></li>
+            </ul>
+        </div> -->
+        <div id="main_info">
+            <div id="default_container">
+            <img style="margin:auto" src="lib/img/llama.jpg" alt="hot llama pic">
+            <p id="welcome_message" style="text-align: center;"> Welcome to the second more improved design of Manarobe games.Enjoy our games and messaging board More games to come in the future. Highscores and Friend Competitive play to come in the future. Almost 80% of bugs are fixed by refresh. For persistent bugs, click the copyRight symbol below. Enjoy your stay and this amazing pic of Phil the llama.</p>
+        </div>
+            <div id="friend_container">
+        <div id="messages_container">
+            <h2>Messaging Board</h2>
+            <div id="past_message_container">
+            
+            </div>
+            <form>
+            <input id="message_input">
+            <button id="message_submit">Submit</button>
+            </form>
+        </div>
+            </div>
+            <div id="games_container">
+
+        <div id="games_info">
+            <div id="gamesnav">
+                    <button onclick="script(1);">Dodge</button>
+                    <button onclick="script(2);">Race</button>
+                    <button onclick="script(3);">Hold the Button</button>
+                    <button onclick="script(4);">PaddleHit</button>
+                    <button onclick="script(5);">Keep Up</button>
+                    <button onclick="script(6);">Bucket Catch</button>
+            </div>
+            <div id="gamebox">
+                        <p class="p5Canvas" style="text-indent:40px;"></p>
+            </div>
+            <script defer>
+                let canvases= document.body.getElementsByClassName("p5Canvas");
+                function script (n){
+                    if(canvases.length>0){
+                        document.getElementById("gamebox").removeChild(canvases[0]);
+                        
+                    }
+                    switch(n){
+                    case 1:
+                        var p5js=new p5(c1,'c1');
+                        break;
+                    case 2:
+                        var p5js=new p5(c2,'c2');
+                        break;
+                    case 3:
+                        var p5js=new p5(c3,'c3');
+                        break;
+                    case 4:
+                        var p5js=new p5(c4,'c4');
+                        break;
+                    case 5:
+                        var p5js=new p5(c5,'c5');
+                        break;
+                    case 6:
+                        var p5js=new p5(c6,'c6');
+                        break;
+                    default:
+                    var p5js=new p5(c1,'c1');
+                        break;
+                    }
+                }
+                
+            </script>
+            <script src="games/game1.js"></script>
+            <script src="games/game2.js"></script>
+            <script src="games/game3.js"></script>
+            <script src="games/game4.js"></script>
+            <script src="games/game5.js"></script>
+            <script src="games/game6.js"></script>
+        </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+<!--         
+        <div class="info_list">
+            <span>About</span>
+            <a href="#">About us</a>
+            <a href="#">About our sponsors</a>
+            <a href="#">About our team</a>
+            <a href="#">News</a>
+        </div>
+        <div class="info_list">
+            <span>Contact</span>
+            <a href="#">Help</a>
+            <a href="#">Press</a>
+            <a href="#">Contact</a>  
+        </div>
+        
+     -->
+        <div id="copyRight"> ManarobeGames &copy; 2019 All Rights Reserved.</div>
+        <!-- </div> -->
+
+    </footer>
+    </div>
 </body>
 </html>

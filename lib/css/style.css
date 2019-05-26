@@ -1,34 +1,262 @@
 body{
+    font-family: 'Concert One', cursive;
+    margin: 0;
+}
+nav{
     align-items: center;
-    background-color: rgba(44, 107, 44, 0.747);
-    display:flex;
-    flex-direction: column;
-    font-family: 'Bungee', cursive;
-
-}
-h1{
-    color:lightgreen;
-    font-family: 'Bungee Shade', cursive;
-    
-}
-#nav{
+    background: lightblue;
     display: flex;
+    font-size: 1.5vw;
     justify-content: space-around;
-    margin:10px;
-    width:70vw;
+    padding-bottom:15px;
+    padding-top:15px;
 }
-button{
-    background-color:lightgreen;
-    border:0;
-    color:darkgreen;
+
+a{
+    text-decoration: none;
+}
+nav>a, nav>button{
+    background-color: lightcoral;
+    border:none;
+    font-size: 1.3em;
+    color:white;
+    font-family: 'Concert One', cursive;
     padding:5px 20px 5px 20px;
     text-decoration: none;
 }
-button:hover{
-    background-color:darkgreen;
+nav>h1{
     color:white;
+}
+
+nav>a:hover, nav>button:hover{
+    
+    background-color: plum;
+    color: white;
+}
+
+h1,h2,h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#main_d{
+    width: 80vw;
+    padding-left: 50px;
+}
+.article{
+    margin-top:10px;
+    text-align: center;
+    background-color: gainsboro;
+    border-radius: 15px;
+    margin-bottom:10px; 
+    padding:12.5px; 
+}
+.btn{
+    padding: 5px 20px 5px 20px;
+    border: solid lightblue 3px;
+    border-radius:15px;
+}
+.btn:hover{
+ color: white;
+ background-color: lightblue;
+}
+.btn:active{
+    background-color: plum;
+    border: solid plum 3px;
+}
+footer{
+    display: flex;
+    color:white;
+    margin-top:20px;
+    justify-content: flex-end;
+    background-color: gray;
+    padding: 50px;
+}
+#friends>li{
+    list-style: none;
+}
+#friends>span{
+    margin-left:-15px;
+}
+#groups>li{
+    list-style: none;
+}
+#friends>li>a, #groups>li>a{
+    color:lightcoral;
+}
+#friends>li>a:hover, #groups>li>a:hover{
+    color:plum;
+}
+#groups>span{
+    margin-left:-15px;
+}
+.info_list{
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px; 
+}
+.info_list>a{
+    text-decoration: none;
+    color: white;
+}
+.info_list>a{
+    text-decoration: none;
+}
+.info_list>a:hover{
+    color:plum;
+}
+.info_list>span{
+    color: white;
+    font-size: 18px;
+}
+#container{
+    display: flex;
+    color:black;
+    justify-content: center;
+    
+}
+/* GAMES PAGE CSS */
+#games_container{
+    display: flex;
+    justify-content: center;
+}
+#games_info{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height:90vh;
+    width: 90vw;
+    margin: auto;
+}
+#gamebox{
+    display: flex;
+    justify-content: center;
+}
+#gamesnav{
+    font-family: 'Concert One', cursive;
+    margin-top:2vh;
+    margin-bottom:2vh;
+    display: flex;
+    justify-content: space-around;
+}
+#gamesnav>button{
+    padding: 10px 20px;
+    border:none;
+    background-color: lightcoral;
+    color: white;
+}
+#copyRight{
+    text-align: center;
+}
+/* LOGIN CSS */
+#login_page{
+    background-color: lightblue;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+#login_page>form{
+    font-family: 'Concert One', cursive;
+    color:white;
+    border-radius: 15px;
+    background-color: lightcoral;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 40vw;
+    height: 50vh;
+}
+#login_page>form>div>input{
+  background-color: white;
+  border-radius: 5px;
+  padding:5px;
+  border:0px;
+}
+#login_page>form>button{
+    padding: 5px 20px;
+    border: solid 3px white;
+    border-radius:5px;
+    background-color: lightcoral;
+    color: white;
+}
+#login_page>form>button:hover{
+ background-color: plum
+}
+/* RESULTS CSS */
+#results{
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+}
+#results>.box{
+    width: 90vw;
+    height: 100px;
+    background-color: gray;
+    margin-top:20px;
+}
+/* Articles */
+#article_info h2{
+    text-align: center;
+}
+#article_info img{
+    margin:10px;
+}
+#article_info div{
+    text-indent: 50px;
+}
+#article_info{
+    color:white;
+    margin:20px;
+    padding:20px;
+    border-radius:15px;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#default_container{
+    display: flex;
+    flex-direction: column;
+    padding: 1vw;
+}
+#default_container>img{
+    text-align: center;
+    border: 10px lightgray solid;
+    border-radius: 15px;
+    
+}
+/* Messages/Friends */
+#messages_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+    justify-content: space-between;
+}
+#past_message_container{
+    width: 70vw;
+    background: lightgray;
+    height: 40vw; 
+    overflow-wrap: break-word;
+    overflow-y: scroll;
 
 }
-p{
-    width:70vw;
+#message_input{
+    width: 70vw;
+    border: solid black 1px;
+    background-color: lightgray;
 }
+#message_submit{
+    padding: 5px 20px;
+    border: solid 3px white;
+    border-radius:5px;
+    background-color: lightcoral;
+    color: white;
+}
+#message_submit:hover{
+    background-color: plum
+   }

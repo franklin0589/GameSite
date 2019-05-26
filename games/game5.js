@@ -75,6 +75,7 @@ var c5= function ( p ){
         if(p.dist(x,y,p.mouseX,p.mouseY)<30){
           v=-10;
           vx=-(p.mouseX-x)/5;
+          vx-=0.5;
           score++;
         }
         
